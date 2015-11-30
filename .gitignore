@@ -1,0 +1,16 @@
+# Virtualenv
+.Python
+bin
+dist
+lib
+include
+tokens
+sentences
+tags
+trees
+entities
+flangular_nlp.egg-info
+
+
+# Mac OS X custom attribute files
+.DS_Store
