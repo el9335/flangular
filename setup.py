@@ -6,6 +6,7 @@ with open('requirements.txt') as f:
     print required
 
 os.system("easy_install pyStatParser")
+os.system("pip install numpy")
 
 setup(
 		name ='flangular-nlp',
