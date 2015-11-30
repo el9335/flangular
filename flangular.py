@@ -2,8 +2,6 @@ from flask import Flask, request, jsonify, current_app, make_response, send_file
 import nltk
 import os
 from nltk import Tree
-from nltk.draw.util import CanvasFrame
-from nltk.draw import TreeWidget
 import json
 import datetime
 from functools import update_wrapper
