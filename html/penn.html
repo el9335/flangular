@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FlangularNLP</title>
+    <link rel="stylesheet" type="text/css" href="css/flangstyle.css">
+</head>
+<body>
+
+
+<p>
+These tables serve as a reference for tags applied by the Part-of-Speech tagger and the dependency parser.
+</p>
+
+<h2>Penn Tree Bank I tags</h2> 
+<table cellpadding="2" cellspacing="2" border="0" style="width:100%">
+
+  <tr > 
+    <td>CC </td>
+    <td>Coordinating conjunction </td>
+  </tr>
+  <tr > 
+    <td>CD </td>
+    <td>Cardinal number </td>
+  </tr>
+  <tr > 
+    <td>DT </td>
+    <td>Determiner </td>
+  </tr>
+  <tr > 
+    <td>EX </td>
+    <td>Existential <i>there<i> </i></i></td>
+  </tr>
+  <tr > 
+    <td>FW </td>
+    <td>Foreign word </td>
+  </tr>
+  <tr > 
+    <td>IN </td>
+    <td>Preposition or subordinating conjunction </td>
+  </tr>
+  <tr > 
+    <td>JJ </td>
+    <td>Adjective </td>
+  </tr>
+  <tr > 
+    <td>JJR </td>
+    <td>Adjective, comparative </td>
+  </tr>
+  <tr > 
+    <td>JJS </td>
+    <td>Adjective, superlative </td>
+  </tr>
+  <tr > 
+    <td>LS </td>
+    <td>List item marker </td>
+  </tr>
+  <tr > 
+    <td>MD </td>
+    <td>Modal </td>
+  </tr>
+  <tr > 
+    <td>NN </td>
+    <td>Noun, singular or mass </td>
+  </tr>
+  <tr > 
+    <td>NNS </td>
+    <td>Noun, plural </td>
+  </tr>
+  <tr > 
+    <td>NNP </td>
+    <td>Proper noun, singular </td>
+  </tr>
+  <tr > 
+    <td>NNPS </td>
+    <td>Proper noun, plural </td>
+  </tr>
+  <tr > 
+    <td>PDT </td>
+    <td>Predeterminer </td>
+  </tr>
+  <tr > 
+    <td>POS </td>
+    <td>Possessive ending </td>
+  </tr>
+  <tr > 
+    <td>PRP </td>
+    <td>Personal pronoun </td>
+  </tr>
+  <tr > 
+    <td>PRP$ </td>
+    <td>Possessive pronoun </td>
+  </tr>
+  <tr > 
+    <td>RB </td>
+    <td>Adverb </td>
+  </tr>
+  <tr > 
+    <td>RBR </td>
+    <td>Adverb, comparative </td>
+  </tr>
+  <tr > 
+    <td>RBS </td>
+    <td>Adverb, superlative </td>
+  </tr>
+  <tr > 
+    <td>RP </td>
+    <td>Particle </td>
+  </tr>
+  <tr > 
+    <td>SYM </td>
+    <td>Symbol </td>
+  </tr>
+  <tr > 
+    <td>TO </td>
+    <td><i>to</i> </td>
+  </tr>
+  <tr > 
+    <td>UH </td>
+    <td>Interjection </td>
+  </tr>
+  <tr > 
+    <td>VB </td>
+    <td>Verb, base form </td>
+  </tr>
+  <tr > 
+    <td>VBD </td>
+    <td>Verb, past tense </td>
+  </tr>
+  <tr > 
+    <td>VBG </td>
+    <td>Verb, gerund or present participle </td>
+  </tr>
+  <tr > 
+    <td>VBN </td>
+    <td>Verb, past participle </td>
+  </tr>
+  <tr > 
+    <td>VBP </td>
+    <td>Verb, non-3rd person singular present </td>
+  </tr>
+  <tr > 
+    <td>VBZ </td>
+    <td>Verb, 3rd person singular present </td>
+  </tr>
+  <tr > 
+    <td>WDT </td>
+    <td>Wh-determiner </td>
+  </tr>
+  <tr > 
+    <td>WP </td>
+    <td>Wh-pronoun </td>
+  </tr>
+  <tr > 
+    <td>WP$ </td>
+    <td>Possessive wh-pronoun </td>
+  </tr>
+  <tr > 
+    <td>WRB </td>
+    <td>Wh-adverb 
+</table>
+
+<h2>Penn Tree Bank II tags (abridged)</h2> 
+<p><b>Clause Level</b></p>
+<table cellpadding="2" cellspacing="2" border="0" style="width:100%">
+  <tr>
+  	<td>S</td> 
+  	<td>Simple declarative clause, i.e. one that is not introduced by a (possible empty) subordinating conjunction or a wh-word and that does not exhibit subject-verb inversion.</td>
+  </tr>
+  <tr>	
+  	<td>SBAR</td> 
+  	<td>Clause introduced by a (possibly empty) subordinating conjunction.</td>
+  </tr>
+  <tr> <td>SBARQ</td> <td>Direct question introduced by a wh-word or a wh-phrase. Indirect questions and relative clauses should be bracketed as SBAR, not SBARQ.</td>
+  </tr>
+  <tr><td>SINV</td> <td>nverted declarative sentence, i.e. one in which the subject follows the tensed verb or modal.</td></tr>
+  <tr><td>SQ</td> <td>Inverted yes/no question, or main clause of a wh-question, following the wh-phrase in SBARQ.</td></tr>
+</table>
+<p><b>Phrase Level</b></p>
+<table cellpadding="2" cellspacing="2" border="0" style="width:100%">
+<tr><td>ADJP</td> <td>Adjective Phrase.</td></tr>
+<tr><td>ADVP</td> <td>Adverb Phrase.</td></tr>
+<tr><td>CONJP</td> <td>Conjunction Phrase.</td></tr>
+<tr><td>FRAG</td> <td>Fragment.</td></tr>
+<tr><td>INTJ</td> <td>Interjection. Corresponds approximately to the part-of-speech tag UH.</td></tr>
+<tr><td>LST</td> <td>List marker. Includes surrounding punctuation</td></tr>
+<tr><td>NAC</td> <td>Not a Constituent; used to show the scope of certain prenominal modifiers within an NP.</td></tr>
+<tr><td>NP</td> <td>Noun Phrase.</td></tr>
+<tr><td>NX</td>  <td>Used within certain complex NPs to mark the head of the NP. Corresponds very roughly to N-bar level but used quite differently.</td></tr>
+<tr><td>PP</td> <td>Prepositional Phrase.</td></tr>
+<tr><td>PRN</td> <td>Parenthetical.</td></tr>
+<tr><td>PRT</td> <td>Particle. Category for words that should be tagged RP.</td></tr>
+<tr><td>QP</td> <td>Quantifier Phrase (i.e. complex measure/amount phrase); used within NP.</td></tr>
+<tr><td>RRC</td> <td>Reduced Relative Clause.</td></tr>
+<tr><td>UCP</td> <td>Unlike Coordinated Phrase.</td></tr>
+<tr><td>VP</td> <td>Vereb Phrase.</td></tr>
+<tr><td>WHADJP</td> <td> Wh-adjective Phrase. Adjectival phrase containing a wh-adverb, as in how hot.</td></tr>
+<tr><td>WHAVP</td> <td>Wh-adverb Phrase. Introduces a clause with an NP gap. May be null (containing the 0 complementizer) or lexical, containing a wh-adverb such as how or why.</td></tr>
+<tr><td>WHNP</td> <td>Wh-noun Phrase. Introduces a clause with an NP gap. May be null (containing the 0 complementizer) or lexical, containing some wh-word, e.g. who, which book, whose daughter, none of which, or how many leopards.</td></tr>
+<tr><td>WHPP</td> <td>Wh-prepositional Phrase. Prepositional phrase containing a wh-noun phrase (such as of which or by whose authority) that either introduces a PP gap or is contained by a WHNP.</td></tr>
+<tr><td>X</td> <td>Unknown, uncertain, or unbracketable. X is often used for bracketing typos and in bracketing the...the-constructions.</td></tr>
+</table>
+</html>

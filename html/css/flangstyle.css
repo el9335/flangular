@@ -1,0 +1,44 @@
+      body {
+         
+      }
+
+      h1 {
+          font-family: "Helvetica";
+          color: black;
+          text-align: center;
+      }
+
+      h2 {
+          font-family: "Helvetica";
+          color: black;
+          text-align: center;
+      }
+
+      div {
+          width:500px;
+          font-family: "Helvetica";
+          color: black;
+          text-align: center;
+      }
+
+      #divResults {
+        font-family: "Courier New";
+      }
+
+      p {
+
+          font-family: "Helvetica";
+          color: black;
+      }
+
+      ul {
+          font-family: "Helvetica";
+      }
+
+      li {
+          font-family: "Helvetica";        
+      }
+
+      table {
+          font-family: "Helvetica";
+      }

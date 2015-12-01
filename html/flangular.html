@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flangular NLP - RESTful Natural Language Processing Web Applications</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/flangstyle.css">
+  
+</head>
+
+<body>
+  
+  <br>
+  <center><div ng-app="flangapp" ng-controller="flangularController as flang">
+    <b>Request Details:</b><br>
+      <div>
+        <br> <!--<input type= "text" ng-model="flang.input">-->
+        <textarea rows="15" cols="70" ng-model="flang.input"></textarea><br>
+        Service type (see Services tab for descriptions): 
+        <select ng-model="flang.inService">
+          <option ng-repeat="s in flang.services">{{s}}</option>
+        </select>
+      </div>
+
+      <form name="mode">
+        <label>
+      <input type="radio" ng-model="flang.mode" value="viz">
+      <b>Visualize</b> results on page
+      </label>
+      <label>
+      <input type="radio" ng-model="flang.mode" value="dl">
+      <b>Download</b> results to local file system
+      </label><br/>
+      <!--<tt>mode = {{flang.mode}}</tt><br/>-->
+      </form>
+      <br>
+      <div>
+        <button class="btn" ng-click="flang.process()">Process</buttion>
+      </div>
+      <!--<div>
+        {{flang.reqMsg}}{{flang.request}}
+      </div>-->
+      <b>Results:</b>
+      <div id="divResults"><br>
+        {{response_json}}
+      </div>
+      </center>
+  </div>
+
+</body>
+</html>
+
+<script>
+(function(angular) {
+  'use strict';
+var flangapp = angular.module('flangapp',[])
+  //removed $scope argument from function
+  .controller('flangularController', function($scope,$http){
+      this.input='Your Text Here.';
+      this.mode='' ;
+      this.inService='Tokens';
+      this.server='http://localhost:5000/';
+      //this.services = ['Tokens','Sentences', 'Tags','Entities','ParseTree'];
+      this.services = ['Tokens','Sentences', 'POSTags','ParseTree'];
+
+      this.treeimage = null;
+
+      /* v2 resource list
+        this.resources = {
+        Tokens:'flangular-nlp/v2.0/services/tokens',
+        Sentences:'flangular-nlp/v2.0/services/sentences',
+        Tags:'flangular-nlp/v2.0/services/tagged-tokens',
+        Entities:'flangular-nlp/v2.0/services/entities',
+        ParseTree:'flangular-nlp/v2.0/services/parsetree'
+      };*/
+
+      this.resources_viz = {
+        Tokens:'flangular-nlp/v3.0/services/viz/tokens',
+        Sentences:'flangular-nlp/v3.0/services/viz/sentences',
+        POSTags:'flangular-nlp/v3.0/services/viz/tagged-tokens',
+        Entities:'flangular-nlp/v3.0/services/viz/entities',
+        ParseTree:'flangular-nlp/v3.0/services/viz/parsetree'
+      }
+
+      this.resources_download = {
+        Tokens:'flangular-nlp/v3.0/services/download/tokens',
+        Sentences:'flangular-nlp/v3.0/services/download/sentences',
+        POSTags:'flangular-nlp/v3.0/services/download/tagged-tokens',
+        Entities:'flangular-nlp/v3.0/services/download/entities',
+        ParseTree:'flangular-nlp/v3.0/services/download/parsetree'
+      }
+
+      this.reqMsg='';
+      this.request = '';
+      this.process = function process() {
+        this.reqMsg='Request: ';
+        
+        if (this.mode == "viz"){
+          this.request=this.server + this.resources_viz[this.inService] + '?text=' + this.input;
+          //window.alert(this.request);
+          this.mode = "";
+        } else if (this.mode == "dl") {
+          this.request=this.server + this.resources_download[this.inService] + '?text=' + this.input;
+          //window.alert(this.request);
+          this.mode="";
+        } else {
+          window.alert("Please select a results mode, visualize or download.  See introduction for more information about these modes.");
+            return 1;
+        }
+
+        var response = $http.get(this.request,{timeout: 25000}).
+          then(function(response) {
+            //window.alert(JSON.stringify(response.data));
+            
+            $scope.response_json = JSON.stringify(response.data);
+
+             if ($scope.response_json == "1") {
+                 $scope.response_json = "";
+                 window.alert("Error writing to file.");
+             }
+
+         }, function(response) {
+            window.alert('Error: Connection Refused.  Ensure that Flangular server is running and try again in 20 seconds.');
+         });
+      };
+  });
+})(window.angular)
+</script>

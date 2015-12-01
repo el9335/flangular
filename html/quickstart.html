@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FlangularNLP</title>
+	<link rel="stylesheet" type="text/css" href="css/flangstyle.css">
+</head>
+<body>
+<p>This section describes how to install and run the server, and provides instructions for interacting with the web application.  </p>
+<h2>Flangular Server Install and Run</h2>
+<p>This tutorial assumes that your system has <tt>pip</tt> and <tt>easy_install</tt> installed, as they are required to install Flangular dependencies.  This version requires that the server be run on the same machine as the web application.</p>
+<p>1. Clone the Flangular repository at <tt>https://github.com/el9335/flangular.git</tt>.</p>
+<p>2. Enter the Flangular directory using <tt>cd flangular</tt></p>
+<p>3. Build the app using <tt>sudo python setup.py install</tt>, or run as administrator on Windows (Windows is NOT natively supported by this application beyond calling the hosting system's separator for file paths.)</p>
+<p>4. Start the server using <tt>sudo python flangular.py</tt>.  You should see the following output (or similar):</p>
+<p>
+<tt>Building the Grammar Model</tt><br>
+<tt>Time: (9.69)s</tt><br>
+
+ <tt> * Restarting with stat</tt><br>
+ <tt> * Debugger is active!</tt><br>
+ <tt> * Debugger pin code: 264-454-349</tt>
+</p>
+
+<p>The Flangular server must be running in order for the web application to work as intended.</p>
+<h2>Interacting with the Flangular Web Application</h2>
+<p>
+This section describes how to interact with the web application.  The NLP services are not listed here, however they can be found at the Services tab. 
+
+<p>Use the drop down menu as shown below to select an NLP service.</p>
+	<center><img src="img/flangular-services.png" align="middle"></center>
+<p>The Flangular web app offers two modes for returning results - <b>visualization</b> on the app page and <b>downloading</b> a text file containing a JSON dump to your local file system.  The first image shows a configuration for requesting tokenization of the contents of the text area where the results should be displayed on the screen.  Notice that the results are displayed  
+</p>
+<center><img src="img/flangular-viz.png" align="middle"></center>
+<p>The second image shows a configuration from requesting tokenization of the contents of the text area where the results should be saved to the local file system.  Notice that server returns a path to the file containing the results of the request.  The contents of this file are <tt>["I", "wo", "n't", "pay", "the", "rent", "!", "You", "must", "pay", "the", "rent", "!"]</tt>.</p>
+<center><img src="img/flangular-dl.png" align="middle"></center>
+<p>Please email questions to <a href="mailto:leblanc@drexel.edu" target="_top">me.</a>
+</p>
+</body>
+
+</html>
