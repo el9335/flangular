@@ -41,7 +41,8 @@
       <!--<div>
         {{flang.reqMsg}}{{flang.request}}
       </div>-->
-      <b>Results:</b>
+      <b>Results:</b><br>
+      <font size ="1"><i>To interpret the meaning of tags returned by the Part-of-Speech tagger and dependency parser, please refer to the Penn Tree Bank tab in the navigation bar.</font></i><br>
       <div id="divResults"><br>
         {{response_json}}
       </div>
@@ -121,7 +122,12 @@ var flangapp = angular.module('flangapp',[])
              }
 
          }, function(response) {
-            window.alert('Error: Connection Refused.  Ensure that Flangular server is running and try again in 20 seconds.');
+            //window.alert('Error: Connection Refused.  Ensure that Flangular server is running and try again in 20 seconds.');
+            if (response.status == "-1") {
+                window.alert("Error processing request.");
+            } else {
+                window.alert('Error: Connection Refused.  Ensure that Flangular server is running and try again in 20 seconds.');
+            }
          });
       };
   });
