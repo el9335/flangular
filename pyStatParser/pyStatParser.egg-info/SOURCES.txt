@@ -1,0 +1,17 @@
+setup.py
+pyStatParser.egg-info/PKG-INFO
+pyStatParser.egg-info/SOURCES.txt
+pyStatParser.egg-info/dependency_links.txt
+pyStatParser.egg-info/top_level.txt
+stat_parser/__init__.py
+stat_parser/eval_parser.py
+stat_parser/learn.py
+stat_parser/parser.py
+stat_parser/paths.py
+stat_parser/pcfg.py
+stat_parser/tokenizer.py
+stat_parser/word_classes.py
+stat_parser/treebanks/__init__.py
+stat_parser/treebanks/extract.py
+stat_parser/treebanks/normalize.py
+stat_parser/treebanks/parse.py
